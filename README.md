@@ -4,4 +4,4 @@ This is an updated version of the FragmentBasics example project given in the of
 
 * Updated to use Gradle
 * Updated to match project structure expected by Android Studio 3.0.1
-* Fixed a bug in activity_layout.xml which caused an error when trying to open an Article while on a large screen
+* Fixed a bug in article_view.xml which caused an error when trying to open an Article while on a large screen

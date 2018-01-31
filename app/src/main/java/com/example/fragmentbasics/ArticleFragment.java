@@ -26,6 +26,8 @@ public class ArticleFragment extends Fragment {
     final static String ARG_POSITION = "position";
     int mCurrentPosition = -1;
 
+    private View rootView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
         Bundle savedInstanceState) {
@@ -38,7 +40,8 @@ public class ArticleFragment extends Fragment {
         }
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.article_view, container, false);
+        rootView = inflater.inflate(R.layout.article_view, container, false);
+        return rootView;
     }
 
     @Override
@@ -60,8 +63,10 @@ public class ArticleFragment extends Fragment {
     }
 
     public void updateArticleView(int position) {
-        TextView article = (TextView) getActivity().findViewById(R.id.article);
-        article.setText(Ipsum.Articles[position]);
+        if(rootView != null) {
+            TextView article = (TextView) rootView.findViewById(R.id.article);
+            article.setText(Ipsum.Articles[position]);
+        }
         mCurrentPosition = position;
     }
 
